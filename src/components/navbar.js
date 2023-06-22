@@ -1,7 +1,7 @@
 function NavBar() {
   return (
     <div id="nav-bar">
-      <h1 id="title">汉字数据库 The Hanzi Database</h1>
+      <h2 id="title">汉字数据库 The Hanzi Database</h2>
       <ul id="nav-links">
         <li>
           <a className="nav-link" href="#a">

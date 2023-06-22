@@ -1,3 +1,63 @@
 .App {
   text-align: center;
 }
+
+.descriptions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.text-container {
+  background-color: white;
+  padding: 2em;
+  border: 2px black solid;
+}
+
+h1 {
+  margin-bottom: 1em;
+}
+
+#welcome {
+  display: flex;
+  flex-direction: column;
+  background-image: url("https://cdn.discordapp.com/attachments/1119103965599125505/1121270998990340237/image.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#about {
+  background-color: red;
+  color: white;
+}
+
+#demo {
+  background-image: url("https://cdn.discordapp.com/attachments/1119103965599125505/1121285574851035246/image.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#demo-card {
+  display: flex;
+  align-items: center;
+  border: 2px black solid;
+  padding: 1em;
+  margin: 1em;
+}
+
+#demo-card > h2 {
+  font-size: 4em;
+  margin-right: 10px;
+}
+
+#readings {
+  display: inherit;
+  flex-wrap: wrap;
+}
+
+#readings > p {
+  flex-basis: 50%;
+  margin: 1em 0;
+}
