@@ -1,0 +1,23 @@
+#search-bar {
+  width: fit-content;
+  margin: 5vh auto;
+}
+
+#search {
+  width: 50vw;
+  border: 2px black solid;
+  border-right: 0;
+  font-size: 1em;
+  padding: 0.5em;
+  outline: 0;
+}
+
+#magnifying-glass {
+  position: absolute;
+  top: 13vh;
+  width: auto;
+  height: 2.4em;
+  border: 2px black solid;
+  border-left: 0;
+  padding: 8px;
+}
