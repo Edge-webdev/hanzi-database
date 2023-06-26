@@ -1,10 +1,10 @@
 import "./home-page.css";
-import "../components/navbar.js";
 import NavBar from "../components/navbar.js";
+import CharacterCard from "../components/card";
 
-function App() {
+function HomePage() {
   return (
-    <div className="App">
+    <div className="home-page">
       <nav>
         <NavBar />
       </nav>
@@ -30,15 +30,13 @@ function App() {
             card associated with it. <br /> This is what a character card looks
             like.
           </p>
-          <div id="demo-card">
-            <h2>我</h2>
-            <div id="readings">
-              <p>Mandarin: Wǒ</p>
-              <p>Cantonese: Ngo5</p>
-              <p>Japanese Kun'yomi: Wa, Ware</p>
-              <p>Japanese On'yomi: Ga</p>
-            </div>
-          </div>
+          <CharacterCard
+            hanzi="我"
+            cmn="Wǒ"
+            yue="Ngo5"
+            jkun="Wa, Ware"
+            jon="Ga"
+          />
           <p>
             It gives the readings of the character in Mandarin, Cantonese, and
             Japanese. <br /> That is all for this home page. <br /> Happy
@@ -50,4 +48,4 @@ function App() {
   );
 }
 
-export default App;
+export default HomePage;

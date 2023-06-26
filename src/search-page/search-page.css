@@ -4,7 +4,7 @@
 }
 
 #search {
-  width: 50vw;
+  width: 40vw;
   border: 2px black solid;
   border-right: 0;
   font-size: 1em;
@@ -20,4 +20,11 @@
   border: 2px black solid;
   border-left: 0;
   padding: 8px;
+}
+
+#card-display {
+  width: 50%;
+  height: 70vh;
+  margin: auto;
+  overflow-y: auto;
 }

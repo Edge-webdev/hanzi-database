@@ -1,6 +1,7 @@
 import "./search-page.css";
 import NavBar from "../components/navbar.js";
 import { useState } from "react";
+import CharacterCard from "../components/card";
 
 function SearchPage() {
   const [input, setInput] = useState("");
@@ -29,6 +30,57 @@ function SearchPage() {
           alt="magnifying glass"
         />
       </div>
+      <section id="card-display">
+        <CharacterCard
+          hanzi="我"
+          cmn="Wǒ"
+          yue="Ngo5"
+          jkun="Wa, Ware"
+          jon="Ga"
+        />
+        <CharacterCard
+          hanzi="我"
+          cmn="Wǒ"
+          yue="Ngo5"
+          jkun="Wa, Ware"
+          jon="Ga"
+        />
+        <CharacterCard
+          hanzi="我"
+          cmn="Wǒ"
+          yue="Ngo5"
+          jkun="Wa, Ware"
+          jon="Ga"
+        />
+        <CharacterCard
+          hanzi="我"
+          cmn="Wǒ"
+          yue="Ngo5"
+          jkun="Wa, Ware"
+          jon="Ga"
+        />
+        <CharacterCard
+          hanzi="我"
+          cmn="Wǒ"
+          yue="Ngo5"
+          jkun="Wa, Ware"
+          jon="Ga"
+        />
+        <CharacterCard
+          hanzi="我"
+          cmn="Wǒ"
+          yue="Ngo5"
+          jkun="Wa, Ware"
+          jon="Ga"
+        />
+        <CharacterCard
+          hanzi="我"
+          cmn="Wǒ"
+          yue="Ngo5"
+          jkun="Wa, Ware"
+          jon="Ga"
+        />
+      </section>
     </div>
   );
 }

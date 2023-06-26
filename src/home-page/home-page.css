@@ -38,26 +38,3 @@ h1 {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-#demo-card {
-  display: flex;
-  align-items: center;
-  border: 2px black solid;
-  padding: 1em;
-  margin: 1em;
-}
-
-#demo-card > h2 {
-  font-size: 4em;
-  margin-right: 10px;
-}
-
-#readings {
-  display: inherit;
-  flex-wrap: wrap;
-}
-
-#readings > p {
-  flex-basis: 50%;
-  margin: 1em 0;
-}
