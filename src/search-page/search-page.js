@@ -1,10 +1,28 @@
 import "./search-page.css";
 import NavBar from "../components/navbar.js";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CharacterCard from "../components/card";
 
 function SearchPage() {
   const [input, setInput] = useState("");
+  const [charData, setCharData] = useState([]);
+
+  const fetchcharData = () => {
+    fetch(
+      "http://ccdb.hemiola.com/characters?filter=gb&fields=kDefinition,kMandarin,kCantonese,kJapaneseOn,kJapaneseKun,string"
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setCharData(data);
+      });
+  };
+  useEffect(() => {
+    fetchcharData();
+  }, []);
+
+  console.log(charData);
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -31,55 +49,16 @@ function SearchPage() {
         />
       </div>
       <section id="card-display">
-        <CharacterCard
-          hanzi="我"
-          cmn="Wǒ"
-          yue="Ngo5"
-          jkun="Wa, Ware"
-          jon="Ga"
-        />
-        <CharacterCard
-          hanzi="我"
-          cmn="Wǒ"
-          yue="Ngo5"
-          jkun="Wa, Ware"
-          jon="Ga"
-        />
-        <CharacterCard
-          hanzi="我"
-          cmn="Wǒ"
-          yue="Ngo5"
-          jkun="Wa, Ware"
-          jon="Ga"
-        />
-        <CharacterCard
-          hanzi="我"
-          cmn="Wǒ"
-          yue="Ngo5"
-          jkun="Wa, Ware"
-          jon="Ga"
-        />
-        <CharacterCard
-          hanzi="我"
-          cmn="Wǒ"
-          yue="Ngo5"
-          jkun="Wa, Ware"
-          jon="Ga"
-        />
-        <CharacterCard
-          hanzi="我"
-          cmn="Wǒ"
-          yue="Ngo5"
-          jkun="Wa, Ware"
-          jon="Ga"
-        />
-        <CharacterCard
-          hanzi="我"
-          cmn="Wǒ"
-          yue="Ngo5"
-          jkun="Wa, Ware"
-          jon="Ga"
-        />
+        {charData.map((char) => (
+          <CharacterCard
+            key={char.string}
+            hanzi={char.string}
+            cmn={char.kMandarin}
+            yue={char.kCantonese}
+            jkun={char.kJapaneseKun}
+            jon={char.kJapaneseOn}
+          />
+        ))}
       </section>
     </div>
   );
