@@ -34,8 +34,9 @@ function HomePage() {
             hanzi="我"
             cmn="Wǒ"
             yue="Ngo5"
-            jkun="Wa, Ware"
+            jkun="Ware, wa"
             jon="Ga"
+            def="Our, us, i, me, my, we"
           />
           <p>
             It gives the readings of the character in Mandarin, Cantonese, and
