@@ -62,9 +62,14 @@ code {
 .readings {
   display: inherit;
   flex-wrap: wrap;
+  margin-left: 1em;
 }
 
 .readings > p {
   flex-basis: 50%;
-  margin: 1em 0;
+}
+
+.readings > .definition {
+  margin-top: 0.5em;
+  flex-basis: 100%;
 }

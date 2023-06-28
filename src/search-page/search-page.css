@@ -24,7 +24,7 @@
 
 #card-display {
   width: 50%;
-  height: 50vh;
+  height: 60vh;
   margin: auto;
   margin-bottom: 5vh;
   overflow-y: auto;
@@ -39,9 +39,7 @@ ul {
   margin: auto;
   justify-content: center;
   align-items: center;
-  gap: 10px;
   min-width: 50vw;
-  flex-wrap: wrap;
 }
 
 .pagination .page-number {
@@ -77,4 +75,5 @@ ul {
 
 .page-numbers {
   display: inherit;
+  gap: 10px;
 }

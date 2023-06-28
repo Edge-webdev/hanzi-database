@@ -39,7 +39,7 @@ function SearchPage() {
 
   const fetchcharData = () => {
     fetch(
-      "http://ccdb.hemiola.com/characters?filter=gb&fields=kDefinition,kMandarin,kCantonese,kJapaneseOn,kJapaneseKun,string"
+      "http://ccdb.hemiola.com/characters?filter=gb&fields=kDefinition,kMandarin,kCantonese,kJapaneseOn,kJapaneseKun, kDefinition, string"
     )
       .then((response) => {
         return response.json();
@@ -85,6 +85,7 @@ function SearchPage() {
             yue={char.kCantonese}
             jkun={char.kJapaneseKun}
             jon={char.kJapaneseOn}
+            def={char.kDefinition}
           />
         ))}
       </section>
