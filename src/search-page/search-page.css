@@ -45,7 +45,7 @@ ul {
 .pagination .page-number {
   font-size: 16px;
   font-weight: 600;
-  color: #00a8ff;
+  color: red;
   background: #fff;
   padding: 5px 10px;
   border-radius: 10px;
@@ -55,16 +55,16 @@ ul {
 
 .pagination .page-number:hover {
   color: #fff;
-  background: #00a8ff;
+  background: red;
 }
 
 .pagination .active {
   color: #fff;
-  background: #00a8ff;
+  background: red;
 }
 
 .pagination .active:hover {
-  color: #00a8ff;
+  color: red;
   background: #fff;
 }
 
