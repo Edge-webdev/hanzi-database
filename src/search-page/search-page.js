@@ -2,10 +2,13 @@ import "./search-page.css";
 import NavBar from "../components/navbar.js";
 import { useState, useEffect } from "react";
 import CharacterCard from "../components/card.js";
+import { Pagination } from "react-pagination-bar";
 
 function SearchPage() {
   const [input, setInput] = useState("");
   const [charData, setCharData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const pageCharsLimit = 100;
 
   const fetchcharData = () => {
     fetch(
@@ -64,18 +67,30 @@ function SearchPage() {
         />
       </div>
       <section id="card-display">
-        {filter(charData).map((char) => (
-          <CharacterCard
-            key={char.string}
-            hanzi={char.string}
-            cmn={char.kMandarin}
-            yue={char.kCantonese}
-            jkun={char.kJapaneseKun}
-            jon={char.kJapaneseOn}
-            def={char.kDefinition}
-          />
-        ))}
+        {filter(charData)
+          .slice(
+            (currentPage - 1) * pageCharsLimit,
+            currentPage * pageCharsLimit
+          )
+          .map((char) => (
+            <CharacterCard
+              key={char.string}
+              hanzi={char.string}
+              cmn={char.kMandarin}
+              yue={char.kCantonese}
+              jkun={char.kJapaneseKun}
+              jon={char.kJapaneseOn}
+              def={char.kDefinition}
+            />
+          ))}
       </section>
+      <Pagination
+        currentPage={currentPage}
+        itemsPerPage={pageCharsLimit}
+        onPageChange={(pageNumber) => setCurrentPage(pageNumber)}
+        totalItems={filter(charData).length}
+        pageNeighbours={2}
+      />
     </div>
   );
 }

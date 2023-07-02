@@ -29,3 +29,33 @@
   margin-bottom: 5vh;
   overflow-y: auto;
 }
+
+#rpb-pagination {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  gap: 1em;
+}
+
+.rpb-item {
+  padding: 1em;
+  font-size: 1em;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5em;
+  background-color: white;
+  color: red;
+}
+
+.rpb-item--active,
+#rpb-pagination > li .rpb-item:nth-child(1):hover,
+#rpb-pagination
+  > li
+  .rpb-item:nth-child(2):hover
+  #rpb-pagination
+  > li
+  .rpb-item:nth-child(8):hover,
+#rpb-pagination > li .rpb-item:nth-child(9):hover {
+  background-color: red;
+  color: white;
+}
