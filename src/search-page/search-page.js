@@ -8,19 +8,23 @@ function SearchPage() {
   const [input, setInput] = useState("");
   const [charData, setCharData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const searchParams = [
+    "kMandarin",
+    "kCantonese",
+    "kJapaneseOn",
+    "kJapaneseKun",
+    "kDefinition",
+    "string",
+  ];
   const pageCharsLimit = 100;
 
-  const fetchcharData = () => {
-    fetch(
-      "http://ccdb.hemiola.com/characters?filter=gb&fields=kDefinition,kMandarin,kCantonese,kJapaneseOn,kJapaneseKun, kDefinition, string"
-    )
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setCharData(data);
-      });
-  };
+  async function fetchcharData() {
+    const response = await fetch(
+      "http://ccdb.hemiola.com/characters?filter=gb&fields=kDefinition,kMandarin,kCantonese,kJapaneseOn,kJapaneseKun, string"
+    );
+    const data = await response.json();
+    setCharData(data);
+  }
   useEffect(() => {
     fetchcharData();
   }, []);
@@ -32,19 +36,16 @@ function SearchPage() {
   const filter = (data) => {
     const result = data.filter((char) => {
       if (input === "") return char;
-      return (
-        includesInput(char.kMandarin) ||
-        includesInput(char.kCantonese) ||
-        includesInput(char.kJapaneseKun) ||
-        includesInput(char.kJapaneseOn) ||
-        includesInput(char.kDefinition)
-      );
+      return searchParams.some((prop) => {
+        return includesInput(char[prop]);
+      });
     });
     return result;
   };
   const handleChange = (e) => {
     e.preventDefault();
     setInput(e.target.value);
+    setCurrentPage(1);
   };
 
   return (
@@ -59,6 +60,7 @@ function SearchPage() {
           placeholder="Search here"
           onChange={handleChange}
           value={input}
+          autoComplete="off"
         />
         <img
           id="magnifying-glass"
