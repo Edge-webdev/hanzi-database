@@ -1,12 +1,14 @@
+import { Link } from "react-router-dom";
+
 function NavBar() {
   return (
     <div id="nav-bar">
       <h2 id="title">汉字数据库 The Hanzi Database</h2>
       <ul id="nav-links">
         <li>
-          <a className="nav-link" href="#a">
+          <Link className="nav-link" to="/">
             Home
-          </a>
+          </Link>
         </li>
         <li>
           <a className="nav-link" href="#b">
@@ -14,9 +16,9 @@ function NavBar() {
           </a>
         </li>
         <li>
-          <a className="nav-link" href="#c">
+          <Link to="/search" className="nav-link">
             Database
-          </a>
+          </Link>
         </li>
       </ul>
     </div>

@@ -16,7 +16,7 @@ function SearchPage() {
     "kDefinition",
     "string",
   ];
-  const pageCharsLimit = 100;
+  const pageCharsLimit = 120;
 
   async function fetchcharData() {
     const response = await fetch(
@@ -68,6 +68,13 @@ function SearchPage() {
           alt="magnifying glass"
         />
       </div>
+      <Pagination
+        currentPage={currentPage}
+        itemsPerPage={pageCharsLimit}
+        onPageChange={(pageNumber) => setCurrentPage(pageNumber)}
+        totalItems={filter(charData).length}
+        pageNeighbours={2}
+      />
       <section id="card-display">
         {filter(charData)
           .slice(
@@ -86,13 +93,6 @@ function SearchPage() {
             />
           ))}
       </section>
-      <Pagination
-        currentPage={currentPage}
-        itemsPerPage={pageCharsLimit}
-        onPageChange={(pageNumber) => setCurrentPage(pageNumber)}
-        totalItems={filter(charData).length}
-        pageNeighbours={2}
-      />
     </div>
   );
 }
