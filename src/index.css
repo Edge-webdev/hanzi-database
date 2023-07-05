@@ -41,6 +41,10 @@ code {
   list-style-type: none;
 }
 
+.dropdown {
+  display: none;
+}
+
 .nav-link {
   color: white;
   text-decoration: none;
@@ -63,13 +67,63 @@ code {
   display: inherit;
   flex-wrap: wrap;
   margin-left: 1em;
+  gap: 3px;
 }
 
 .readings > p {
-  flex-basis: 50%;
+  flex-basis: 45%;
 }
 
 .readings > .definition {
   margin-top: 0.5em;
   flex-basis: 100%;
+}
+
+@media (max-width: 992px) {
+  #nav-bar {
+    flex-direction: column;
+    height: 12vh;
+  }
+  #title {
+    font-size: 30px;
+    margin-top: 0.5em;
+  }
+  #nav-links {
+    display: none;
+  }
+  .dropdown {
+    display: inline;
+    width: 100%;
+  }
+  .dropbtn {
+    background-color: red;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 1em;
+    font-size: 1em;
+    font-weight: bold;
+  }
+  .dropdown-content {
+    display: none;
+  }
+  .shown {
+    display: inline;
+    position: absolute;
+    width: 100vw;
+    top: 10vh;
+    right: 0;
+    background-color: red;
+  }
+  .shown ul {
+    display: flex;
+    flex-direction: column;
+  }
+  .shown ul li {
+    text-align: left;
+    padding: 1em;
+  }
+  .shown ul li .nav-link {
+    margin-left: 1em;
+  }
 }
