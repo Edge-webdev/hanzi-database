@@ -11,7 +11,9 @@ function HomePage() {
       <section id="welcome" className="descriptions">
         <div className="text-container">
           <h1>Welcome to the Hanzi Database</h1>
-          <p>A collection of over 6000+ characters</p>
+          <p>
+            A collection of &lt;21000 characters both simplified and traditional
+          </p>
         </div>
       </section>
       <section id="about" className="descriptions">

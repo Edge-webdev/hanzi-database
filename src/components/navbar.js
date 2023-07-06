@@ -9,7 +9,7 @@ function NavBar() {
   };
   return (
     <div id="nav-bar">
-      <h2 id="title">汉字数据库 The Hanzi Database</h2>
+      <h2 id="title">汉字数据库 (漢字數據庫) The Hanzi Database</h2>
       <ul id="nav-links">
         <li>
           <Link className="nav-link" to="/">
@@ -33,7 +33,7 @@ function NavBar() {
         </button>
         <div
           className={
-            contentShown ? "dropdown-content" : "dropdown-content shown"
+            contentShown ? "dropdown-content shown" : "dropdown-content"
           }
         >
           <ul>

@@ -20,7 +20,7 @@ function SearchPage() {
 
   async function fetchcharData() {
     const response = await fetch(
-      "http://ccdb.hemiola.com/characters?filter=gb&fields=kDefinition,kMandarin,kCantonese,kJapaneseOn,kJapaneseKun, string"
+      "http://ccdb.hemiola.com/characters?fields=kDefinition,kMandarin,kCantonese,kJapaneseOn,kJapaneseKun, string"
     );
     const data = await response.json();
     setCharData(data);
