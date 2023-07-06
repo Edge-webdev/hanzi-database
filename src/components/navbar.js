@@ -17,9 +17,9 @@ function NavBar() {
           </Link>
         </li>
         <li>
-          <a className="nav-link" href="#b">
+          <Link className="nav-link" to="/info">
             Info
-          </a>
+          </Link>
         </li>
         <li>
           <Link to="/search" className="nav-link">
@@ -44,9 +44,9 @@ function NavBar() {
               </Link>
             </li>
             <li>
-              <a className="nav-link" href="#b">
+              <Link className="nav-link" to="/info">
                 Info
-              </a>
+              </Link>
             </li>
             <li>
               <Link to="/search" className="nav-link">
