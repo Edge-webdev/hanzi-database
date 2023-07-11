@@ -22,7 +22,7 @@ function SearchPage() {
 
   async function fetchcharData() {
     const response = await fetch(
-      "http://ccdb.hemiola.com/characters?fields=kDefinition,kMandarin,kCantonese,kJapaneseOn,kJapaneseKun,kKorean,kVietnamese,string"
+      "https://thehanzidatabase.netlify.app/api/characters?fields=kDefinition,kMandarin,kCantonese,kJapaneseOn,kJapaneseKun,kKorean,kVietnamese,string"
     );
     const data = await response.json();
     setCharData(data);
