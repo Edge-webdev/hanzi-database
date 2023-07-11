@@ -1,0 +1,26 @@
+#info-box {
+  background-image: url("./programming-photo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#info-box h3,
+#info-box p {
+  margin-right: 20vw;
+}
+
+.info-text {
+  margin: 1em 0;
+}
+
+#site-list {
+  list-style-type: none;
+}
+
+#site-list li {
+  margin: 1em 0;
+}
+
+a {
+  color: black;
+}

@@ -23,7 +23,7 @@ h1 {
 #welcome {
   display: flex;
   flex-direction: column;
-  background-image: url("https://cdn.discordapp.com/attachments/1119103965599125505/1121270998990340237/image.png");
+  background-image: url("./calligraphy1.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -34,7 +34,7 @@ h1 {
 }
 
 #demo {
-  background-image: url("https://cdn.discordapp.com/attachments/1119103965599125505/1121285574851035246/image.png");
+  background-image: url("./calligraphy2.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
