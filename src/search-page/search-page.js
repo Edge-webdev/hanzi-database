@@ -13,6 +13,8 @@ function SearchPage() {
     "kCantonese",
     "kJapaneseOn",
     "kJapaneseKun",
+    "kKorean",
+    "kVietnamese",
     "kDefinition",
     "string",
   ];
@@ -20,7 +22,7 @@ function SearchPage() {
 
   async function fetchcharData() {
     const response = await fetch(
-      "http://ccdb.hemiola.com/characters?fields=kDefinition,kMandarin,kCantonese,kJapaneseOn,kJapaneseKun, string"
+      "http://ccdb.hemiola.com/characters?fields=kDefinition,kMandarin,kCantonese,kJapaneseOn,kJapaneseKun,kKorean,kVietnamese,string"
     );
     const data = await response.json();
     setCharData(data);
@@ -89,6 +91,8 @@ function SearchPage() {
               yue={char.kCantonese}
               jkun={char.kJapaneseKun}
               jon={char.kJapaneseOn}
+              krn={char.kKorean}
+              viet={char.kVietnamese}
               def={char.kDefinition}
             />
           ))}

@@ -38,12 +38,15 @@ function HomePage() {
             yue="Ngo5"
             jkun="Ware, wa"
             jon="Ga"
+            krn="A"
+            viet="Ngã"
             def="Our, us, i, me, my, we"
           />
           <p>
             It gives the readings of the character in Mandarin, Cantonese, and
-            Japanese. <br /> That is all for this home page. <br /> Happy
-            searching!
+            Japanese (both on'yomi and kun'yomi) <br /> as well as historical
+            readings for Korean and Vietnamese. <br /> That is all for this home
+            page. <br /> Happy searching!
           </p>
         </div>
       </section>
