@@ -1,6 +1,6 @@
 var pinyin_v1 = require("pinyin-tone");
 
-function CharacterCard({ hanzi, cmn, yue, jkun, jon, def }) {
+function CharacterCard({ hanzi, cmn, yue, jkun, jon, krn, viet, def }) {
   const formatText = (text) =>
     String(text).charAt(0).toUpperCase() + String(text).slice(1).toLowerCase();
   return (
@@ -28,7 +28,17 @@ function CharacterCard({ hanzi, cmn, yue, jkun, jon, def }) {
           Japanese On'yomi:{" "}
           {jon ? formatText(jon).replace(/\s+/g, ", ") : "No reading"}
         </p>
-        <p className="definition">Definition: {formatText(def)}</p>
+        <p>
+          Korean Hanja:{" "}
+          {krn ? formatText(krn).replace(/\s+/g, ", ") : "No reading"}
+        </p>
+        <p>
+          Vietnamese Chữ Nôm:{" "}
+          {viet ? formatText(viet).replace(/\s+/g, ", ") : "No reading"}
+        </p>
+        <p className="definition">
+          Definition: {def ? formatText(def) : "No definition available"}
+        </p>
       </div>
     </div>
   );
