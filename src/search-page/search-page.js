@@ -66,7 +66,7 @@ function SearchPage() {
         />
         <img
           id="magnifying-glass"
-          src="https://img.uxwing.com/wp-content/themes/uxwing/download/user-interface/search-icon.png"
+          src="https://upload.wikimedia.org/wikipedia/commons/5/55/Magnifying_glass_icon.svg"
           alt="magnifying glass"
         />
       </div>
