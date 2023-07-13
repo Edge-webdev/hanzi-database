@@ -6,18 +6,28 @@ import { Pagination } from "react-pagination-bar";
 
 function SearchPage() {
   const [input, setInput] = useState("");
+  const [option, setOption] = useState("");
   const [charData, setCharData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const searchParams = [
     "kMandarin",
     "kCantonese",
-    "kJapaneseOn",
     "kJapaneseKun",
+    "kJapaneseOn",
     "kKorean",
     "kVietnamese",
     "kDefinition",
     "string",
   ];
+  const options = {
+    cmn: "kMandarin",
+    yue: "kCantonese",
+    jkun: "kJapaneseKun",
+    jon: "kJapaneseOn",
+    krn: "kKorean",
+    viet: "kVietnamese",
+    def: "kDefinition",
+  };
   const pageCharsLimit = 120;
 
   async function fetchcharData() {
@@ -39,7 +49,10 @@ function SearchPage() {
     const result = data.filter((char) => {
       if (input === "") return char;
       return searchParams.some((prop) => {
-        return includesInput(char[prop]);
+        if (option === "all") {
+          return includesInput(char[prop]);
+        }
+        return includesInput(char[options[option]]);
       });
     });
     return result;
@@ -52,10 +65,15 @@ function SearchPage() {
       .replace(/Đ/gi, "d");
   };
 
-  const handleChange = (e) => {
+  const handleInputChange = (e) => {
     e.preventDefault();
     setInput(e.target.value);
     setCurrentPage(1);
+  };
+
+  const handleOptionChange = (e) => {
+    e.preventDefault();
+    setOption(e.target.value);
   };
 
   return (
@@ -68,7 +86,7 @@ function SearchPage() {
           id="search"
           type="text"
           placeholder="Search here"
-          onChange={handleChange}
+          onChange={handleInputChange}
           value={input}
           autoComplete="off"
         />
@@ -77,6 +95,24 @@ function SearchPage() {
           src="https://upload.wikimedia.org/wikipedia/commons/5/55/Magnifying_glass_icon.svg"
           alt="magnifying glass"
         />
+      </div>
+      <div id="search-menu-container">
+        <label htmlFor="search-menu">Search reading for:</label>
+
+        <select
+          name="search-menu"
+          id="search-menu"
+          onChange={handleOptionChange}
+        >
+          <option value="all">All</option>
+          <option value="cmn">Mandarin Chinese</option>
+          <option value="yue">Cantonese</option>
+          <option value="jkun">Japanese Kun'yomi</option>
+          <option value="jon">Japanese On'yomi</option>
+          <option value="krn">Korean</option>
+          <option value="viet">Vietnamese</option>
+          <option value="def">Definition</option>
+        </select>
       </div>
       <Pagination
         currentPage={currentPage}
