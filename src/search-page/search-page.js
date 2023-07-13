@@ -32,7 +32,7 @@ function SearchPage() {
   }, []);
 
   const includesInput = (text) => {
-    return String(text).toLowerCase().includes(input.toLowerCase());
+    return removeTone(String(text)).toLowerCase().includes(input.toLowerCase());
   };
 
   const filter = (data) => {
@@ -44,6 +44,14 @@ function SearchPage() {
     });
     return result;
   };
+
+  const removeTone = (str) => {
+    return str
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/gi, "")
+      .replace(/Đ/gi, "d");
+  };
+
   const handleChange = (e) => {
     e.preventDefault();
     setInput(e.target.value);
